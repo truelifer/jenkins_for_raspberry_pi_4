@@ -14,5 +14,4 @@ RUN apt-get update && apt-get install -y \
     openjdk-8-jdk \
     && rm -rf /var/lib/apt/lists/*
 
-RUN service jenkins start
-ENTRYPOINT ["tail", "-f", "/var/log/jenkins/jenkins.log"]
+ENTRYPOINT service jenkins start && tail -f /var/log/jenkins/jenkins.log
